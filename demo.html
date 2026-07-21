@@ -29,7 +29,7 @@
       </div>
     </section>
     <section class="flow">
-      <div class="panel step"><div class="num">1</div><strong>Connect TikTok</strong><p>Owner starts OAuth from the PS5 After Dark workflow.</p><div class="screen">GET /oauth/start<br><span class="ok">scope=user.info.basic</span><br>redirect_uri=http://localhost:8765/callback/</div></div>
+      <div class="panel step"><div class="num">1</div><strong>Connect TikTok</strong><p>Owner starts OAuth from the PS5 After Dark workflow.</p><div class="screen">GET /oauth/start<br><span class="ok">scope=user.info.basic</span><br>redirect_uri=http://localhost:8765/callback</div></div>
       <div class="panel step"><div class="num">2</div><strong>Confirm account</strong><p>The app reads basic profile only to confirm the connected creator account.</p><div class="screen">GET /v2/user/info/<br><span class="ok">identity confirmed</span><br>owner account only</div></div>
       <div class="panel step"><div class="num">3</div><strong>Upload clip</strong><p>Edited gameplay video is uploaded to TikTok using Content Posting API.</p><div class="screen">POST /v2/post/publish/inbox/video/init/<br><span class="ok">scope=video.upload</span><br>clip=gameplay-short.mp4</div></div>
     </section>
