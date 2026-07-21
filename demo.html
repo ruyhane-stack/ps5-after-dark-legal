@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PS5 After Dark Studio — TikTok Integration Demo</title>
+  <meta name="description" content="TikTok integration demo page for PS5 After Dark Studio." />
+  <style>
+    :root{--bg:#060713;--panel:#101426;--panel2:#151b33;--text:#f7f8ff;--muted:#aeb7d6;--line:#2a3155;--pink:#ff2d75;--cyan:#00e0ff;--violet:#7c5cff;--green:#33d17a;--amber:#ffb86b;}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 15% 8%,rgba(124,92,255,.35),transparent 34%),radial-gradient(circle at 82% 0%,rgba(0,224,255,.22),transparent 32%),var(--bg);color:var(--text);min-height:100vh;padding:28px}
+    .wrap{max-width:1160px;margin:0 auto}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}.brand{display:flex;gap:14px;align-items:center}.logo{width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,var(--violet),var(--cyan));display:grid;place-items:center;font-weight:900;box-shadow:0 18px 50px rgba(0,224,255,.2)}
+    .badge{border:1px solid rgba(255,45,117,.45);background:rgba(255,45,117,.12);color:#ffd6e5;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.url{font-size:13px;color:#99a6d6;border:1px solid var(--line);padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.035)}
+    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:22px}.panel{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.025));border-radius:26px;padding:26px;box-shadow:0 26px 90px rgba(0,0,0,.32)}
+    h1{font-size:56px;line-height:.95;letter-spacing:-.06em;margin:10px 0 16px}.grad{background:linear-gradient(90deg,#fff,#d7dbff 45%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}p{color:var(--muted);line-height:1.65;font-size:17px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{border:0;border-radius:14px;padding:13px 18px;font-weight:900;color:#07101d;background:linear-gradient(90deg,var(--cyan),#8df0ff);box-shadow:0 18px 44px rgba(0,224,255,.18)}.btn.alt{background:rgba(255,255,255,.09);color:var(--text);border:1px solid var(--line);box-shadow:none}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{background:rgba(16,20,38,.82);border:1px solid var(--line);border-radius:20px;padding:18px}.card strong{display:block;margin-bottom:7px}.pill{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:#b9ffe0;background:rgba(51,209,122,.12);border:1px solid rgba(51,209,122,.35);border-radius:999px;padding:6px 9px}.flow{margin-top:22px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{position:relative;min-height:170px}.step .num{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--pink),var(--violet));font-weight:900;margin-bottom:12px}.screen{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#070a16;border:1px solid #273056;border-radius:14px;padding:12px;color:#d9e2ff;line-height:1.5}.ok{color:#73ffa9}.warn{color:#ffdd86}.footer{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:24px;color:#8490bd;font-size:13px}.footer a{color:#b9dfff;text-decoration:none}
+    @media(max-width:900px){.hero,.flow{grid-template-columns:1fr}.grid{grid-template-columns:1fr}h1{font-size:42px}.top{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand"><div class="logo">PS5</div><div><div class="badge">TikTok integration review demo</div><h2 style="margin:8px 0 0">PS5 After Dark Studio</h2></div></div>
+      <div class="url">https://ruyhane-stack.github.io/ps5-after-dark-legal/demo.html</div>
+    </div>
+    <section class="hero">
+      <div class="panel">
+        <h1><span class="grad">Gameplay clips → TikTok-ready Shorts</span></h1>
+        <p>Owner-operated web/desktop workflow for connecting a TikTok account, uploading edited gameplay clips, opening a Share Kit handoff, and receiving webhook status updates.</p>
+        <div class="actions"><button class="btn">Connect TikTok</button><button class="btn alt">Upload gameplay short</button><button class="btn alt">Share draft</button></div>
+      </div>
+      <div class="panel grid">
+        <div class="card"><strong>Login Kit</strong><span>OAuth connects only the owner’s TikTok account.</span><div class="pill">scope: user.info.basic</div></div>
+        <div class="card"><strong>Content Posting API</strong><span>Uploads edited gameplay Shorts for owner review.</span><div class="pill">scope: video.upload</div></div>
+        <div class="card"><strong>Share Kit</strong><span>Opens TikTok share flow for manual creator posting.</span><div class="pill">no secrets shown</div></div>
+        <div class="card"><strong>Webhooks</strong><span>Receives non-PII processing/upload status events.</span><div class="pill">status callback</div></div>
+      </div>
+    </section>
+    <section class="flow">
+      <div class="panel step"><div class="num">1</div><strong>Connect TikTok</strong><p>Owner starts OAuth from the PS5 After Dark workflow.</p><div class="screen">GET /oauth/start<br><span class="ok">scope=user.info.basic</span><br>redirect_uri=/callback</div></div>
+      <div class="panel step"><div class="num">2</div><strong>Confirm identity</strong><p>The app reads basic profile only to confirm the connected account.</p><div class="screen">GET /v2/user/info/<br><span class="ok">open_id: confirmed</span><br>display_name: owner</div></div>
+      <div class="panel step"><div class="num">3</div><strong>Upload Short</strong><p>Edited gameplay clip is uploaded for creator review.</p><div class="screen">POST /v2/post/publish/inbox/video/init/<br><span class="ok">video.upload</span><br>clip: boss-fight-short.mp4</div></div>
+      <div class="panel step"><div class="num">4</div><strong>Status + share</strong><p>Webhook confirms processing and Share Kit is available for manual handoff.</p><div class="screen"><span class="warn">webhook:</span> upload.ready<br><span class="ok">Share Kit opened</span><br>creator reviews caption</div></div>
+    </section>
+    <div class="footer"><span>Demo contains no passwords, access tokens, client secrets, or third-party account data.</span><span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span></div>
+  </div>
+</body>
+</html>
