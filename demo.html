@@ -39,7 +39,7 @@
       <div class="panel step"><div class="num">1</div><strong>Connect TikTok</strong><p>Owner starts OAuth from the PS5 After Dark workflow.</p><div class="screen">GET /oauth/start<br><span class="ok">scope=user.info.basic</span><br>redirect_uri=/callback</div></div>
       <div class="panel step"><div class="num">2</div><strong>Confirm identity</strong><p>The app reads basic profile only to confirm the connected account.</p><div class="screen">GET /v2/user/info/<br><span class="ok">open_id: confirmed</span><br>display_name: owner</div></div>
       <div class="panel step"><div class="num">3</div><strong>Upload Short</strong><p>Edited gameplay clip is uploaded for creator review.</p><div class="screen">POST /v2/post/publish/inbox/video/init/<br><span class="ok">video.upload</span><br>clip: boss-fight-short.mp4</div></div>
-      <div class="panel step"><div class="num">4</div><strong>Status + share</strong><p>Webhook confirms processing and Share Kit is available for manual handoff.</p><div class="screen"><span class="warn">webhook:</span> upload.ready<br><span class="ok">Share Kit opened</span><br>creator reviews caption</div></div>
+      <div class="panel step"><div class="num">4</div><strong>Status + share</strong><p>Webhook confirms processing and Share Kit is available for manual handoff.</p><div class="screen">POST /webhooks/tiktok/status<br><span class="warn">event:</span> upload.ready<br><span class="ok">Share Kit opened</span><br>creator reviews caption</div></div>
     </section>
     <div class="footer"><span>Demo contains no passwords, access tokens, client secrets, or third-party account data.</span><span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span></div>
   </div>
